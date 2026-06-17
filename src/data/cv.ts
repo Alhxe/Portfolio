@@ -22,7 +22,7 @@ export const EXPERIENCE = [
     description:
       "Diseño y desarrollo de APIs REST para múltiples microservicios de reservas, integración con proveedores y gestión de producto turístico. Enfoque API First y revisión cruzada en PRs.",
     highlight: "Spring Boot",
-    tech: ["Microservicios", "Java 17", "Java 21", "Spring Boot", "Spring Security", "PostgreSQL", "Kafka", "Kubernetes", "Tekton", "SonarQube", "Azure DevOps"],
+    tech: ["Microservicios", "Java 17", "Java 21", "Spring Boot", "Spring Security", "PostgreSQL", "Kafka", "Kubernetes", "Tekton", "SonarQube", "Maven", "Azure DevOps"],
   },
   {
     role: "Desarrollador de Software",
@@ -44,7 +44,7 @@ export const EXPERIENCE = [
     description:
       "Casi 3 años desarrollando servicios backend basados en microservicios Java/Spring en remoto.",
     highlight: "Java",
-    tech: ["Microservicios", "Java", "Spring", "Oracle", "SQL", "Sencha ExtJS"],
+    tech: ["Microservicios", "Java", "Spring", "Oracle", "SQL", "Sencha ExtJS", "Maven"],
   },
   {
     role: "Desarrollador de Software",
@@ -55,7 +55,7 @@ export const EXPERIENCE = [
     description:
       "Desarrollo de microservicios Java/Spring y frontend Angular para administración pública.",
     highlight: "Oracle",
-    tech: ["Microservicios", "Java 7 / 8 / 11", "Spring", "Angular", "Git", "Clean Code", "Oracle", "MySQL"],
+    tech: ["Microservicios", "Java 7 / 8 / 11", "Spring", "Angular", "Git", "Clean Code", "Oracle", "MySQL", "Maven"],
   },
 ];
 
@@ -78,7 +78,7 @@ export const STACK_GROUPS = [
   { label: "Arquitectura", items: ["Microservicios", "REST · API First", "OpenAPI", "Event-Driven · Kafka", "API Gateway", "BFF"] },
   { label: "Patrones & Diseño", items: ["Arquitectura Hexagonal", "Ports & Adapters", "Clean Architecture", "DDD", "Package by Layer", "Package by Feature", "SOLID", "Inyección de dependencias"] },
   { label: "Datos", items: ["PostgreSQL", "Oracle DB", "SQL", "Modelado relacional", "Optimización de queries"] },
-  { label: "Cloud & DevOps", items: ["Azure", "AWS EC2", "AWS S3", "Docker", "Kubernetes", "Tekton", "Jenkins", "GitHub Actions", "Azure DevOps"] },
+  { label: "Cloud & DevOps", items: ["Azure", "AWS EC2", "AWS S3", "Docker", "Kubernetes", "Tekton", "Jenkins", "GitHub Actions", "Azure DevOps", "Maven"] },
   { label: "Calidad & Proceso", items: ["Clean Code", "JUnit", "Mockito", "SonarQube", "Git", "Scrum"] },
 ];
 
