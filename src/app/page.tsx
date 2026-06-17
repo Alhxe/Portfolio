@@ -144,7 +144,7 @@ export default function SignaturePage() {
                           <p className="text-zinc-600 leading-relaxed mt-3">{e.description}</p>
                           <div className="flex flex-wrap gap-1.5 mt-4">
                             {e.tech.map((tn) => (
-                              <span key={tn} className={`mono text-xs px-2 py-0.5 rounded-md border ${tn === "Microservicios" ? "border-amber-300 text-amber-700 bg-amber-50" : "border-zinc-200 text-zinc-500 bg-zinc-50"}`}>{tn}</span>
+                              <span key={tn} className={`mono text-xs px-2 py-0.5 rounded-md border ${tn === e.highlight ? "border-amber-300 text-amber-700 bg-amber-50" : "border-zinc-200 text-zinc-500 bg-zinc-50"}`}>{tn}</span>
                             ))}
                           </div>
                         </div>

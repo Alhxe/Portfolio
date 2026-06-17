@@ -21,7 +21,8 @@ export const EXPERIENCE = [
     client: "Grupo turístico líder en España",
     description:
       "Diseño y desarrollo de APIs REST para múltiples microservicios de reservas, integración con proveedores y gestión de producto turístico. Enfoque API First y revisión cruzada en PRs.",
-    tech: ["Microservicios", "Java 17", "Java 21", "Spring Boot", "Spring Security", "PostgreSQL", "Kafka", "Kubernetes", "Azure DevOps"],
+    highlight: "Spring Boot",
+    tech: ["Microservicios", "Java 17", "Java 21", "Spring Boot", "Spring Security", "PostgreSQL", "Kafka", "Kubernetes", "Tekton", "SonarQube", "Azure DevOps"],
   },
   {
     role: "Desarrollador de Software",
@@ -31,6 +32,7 @@ export const EXPERIENCE = [
     client: "Sector bancario",
     description:
       "Mantenimiento y evolución de microservicios de mensajería multicanal (SMS · Push · Email) de misión crítica. Alta disponibilidad, trazabilidad, SLA y procesos batch masivos.",
+    highlight: "Microservicios",
     tech: ["Microservicios", "Java 8", "Spring Boot", "Oracle DB", "Linux", "JUnit", "Maven"],
   },
   {
@@ -41,6 +43,7 @@ export const EXPERIENCE = [
     client: "",
     description:
       "Casi 3 años desarrollando servicios backend basados en microservicios Java/Spring en remoto.",
+    highlight: "Java",
     tech: ["Microservicios", "Java", "Spring", "Oracle", "SQL", "Sencha ExtJS"],
   },
   {
@@ -51,6 +54,7 @@ export const EXPERIENCE = [
     client: "Sector público",
     description:
       "Desarrollo de microservicios Java/Spring y frontend Angular para administración pública.",
+    highlight: "Oracle",
     tech: ["Microservicios", "Java 7 / 8 / 11", "Spring", "Angular", "Git", "Clean Code", "Oracle", "MySQL"],
   },
 ];
