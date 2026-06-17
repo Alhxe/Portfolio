@@ -44,7 +44,7 @@ export const EXPERIENCE = [
     description:
       "Casi 3 años desarrollando servicios backend basados en microservicios Java/Spring en remoto.",
     highlight: "Java",
-    tech: ["Microservicios", "Java", "Spring", "Oracle", "SQL", "Sencha ExtJS", "Maven"],
+    tech: ["Microservicios", "Java", "Spring", "Oracle", "SQL", "Sencha ExtJS", "Maven", "SVN"],
   },
   {
     role: "Desarrollador de Software",
@@ -55,7 +55,7 @@ export const EXPERIENCE = [
     description:
       "Desarrollo de microservicios Java/Spring y frontend Angular para administración pública.",
     highlight: "Oracle",
-    tech: ["Microservicios", "Java 7 / 8 / 11", "Spring", "Angular", "Git", "Clean Code", "Oracle", "MySQL", "Maven"],
+    tech: ["Microservicios", "Java 7 / 8 / 11", "Spring", "Angular", "Git", "Clean Code", "Oracle", "MySQL", "Maven", "SVN"],
   },
 ];
 
