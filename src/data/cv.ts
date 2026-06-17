@@ -74,7 +74,7 @@ export const MIARBITRO = {
 };
 
 export const STACK_GROUPS = [
-  { label: "Lenguaje & Core", items: ["Java 9 / 11 / 17 / 21", "Spring Boot", "Spring Security", "Spring MVC", "JPA / Hibernate"] },
+  { label: "Lenguaje & Core", items: ["Java 8 / 11 / 17 / 21", "Spring Boot", "Spring Security", "Spring MVC", "JPA / Hibernate"] },
   { label: "Arquitectura", items: ["Microservicios", "REST · API First", "OpenAPI", "Event-Driven · Kafka", "API Gateway", "BFF"] },
   { label: "Patrones & Diseño", items: ["Arquitectura Hexagonal", "Ports & Adapters", "Clean Architecture", "DDD", "Package by Layer", "Package by Feature", "SOLID", "Inyección de dependencias"] },
   { label: "Datos", items: ["PostgreSQL", "Oracle DB", "SQL", "Modelado relacional", "Optimización de queries"] },
