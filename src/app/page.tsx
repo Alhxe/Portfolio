@@ -104,7 +104,7 @@ export default function SignaturePage() {
                 <div className="relative">
                   <div className="absolute -inset-3 rounded-full bg-gradient-to-br from-indigo-300/40 to-amber-200/30 blur-2xl" />
                   <div className="relative w-44 h-44 rounded-full overflow-hidden ring-[6px] ring-white shadow-xl">
-                    <SmartImg src="/profile.png" alt={PROFILE.name} className="w-full h-full object-cover scale-[1.18]" fallback={<div className="w-full h-full bg-zinc-100 grid place-items-center text-2xl text-zinc-400">AP</div>} />
+                    <SmartImg src="/profile.png" alt={PROFILE.name} className="w-full h-full object-cover object-center scale-[1.12]" fallback={<div className="w-full h-full bg-zinc-100 grid place-items-center text-2xl text-zinc-400">AP</div>} />
                   </div>
                 </div>
               </div>
