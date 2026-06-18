@@ -101,7 +101,7 @@ export default function HeroMesh() {
 
       {/* photo — the client, calls the gateway */}
       <circle cx={PHOTO.cx} cy={PHOTO.cy} r={PHOTO.r + 6} fill="white" filter="url(#meshSoft)" />
-      <image href="/profile.png" x={PHOTO.cx - PHOTO.r} y={PHOTO.cy - PHOTO.r} width={PHOTO.r * 2} height={PHOTO.r * 2} preserveAspectRatio="xMidYMid slice" clipPath="url(#meshPhoto)" />
+      <image href="/profile.png" x={PHOTO.cx - PHOTO.r * 1.18} y={PHOTO.cy - PHOTO.r * 1.18} width={PHOTO.r * 2 * 1.18} height={PHOTO.r * 2 * 1.18} preserveAspectRatio="xMidYMid slice" clipPath="url(#meshPhoto)" />
       <circle cx={PHOTO.cx} cy={PHOTO.cy} r={PHOTO.r} fill="none" stroke="white" strokeWidth="6" />
       <circle cx={PHOTO.cx} cy={PHOTO.cy} r={PHOTO.r} fill="none" stroke="#4f46e5" strokeWidth="1.5" strokeOpacity="0.45" />
     </svg>

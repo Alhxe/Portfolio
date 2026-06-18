@@ -13,9 +13,17 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://alexperezalvarez.dev"),
   title: "Alex Pérez Álvarez — Desarrollador Backend",
   description:
     "Desarrollador Backend especializado en Java, Spring Boot y arquitectura de microservicios. 5 años en entornos enterprise.",
+  openGraph: {
+    title: "Alex Pérez Álvarez — Desarrollador Backend",
+    description:
+      "Backend Engineer · Java · Spring Boot · Microservicios. 5 años en entornos enterprise.",
+    type: "website",
+    locale: "es_ES",
+  },
 };
 
 export default function RootLayout({
