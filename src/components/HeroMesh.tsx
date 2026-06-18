@@ -35,14 +35,39 @@ const EDGES: [string, string][] = [
   ["payments", "kafka"],
 ];
 
-const FLOWS: { e: [string, string]; color: string; delay: number }[] = [
-  { e: ["photo", "gw"], color: "#6366f1", delay: 0 },
-  { e: ["gw", "orders"], color: "#f59e0b", delay: 0.6 },
-  { e: ["orders", "kafka"], color: "#6366f1", delay: 1.2 },
-  { e: ["gw", "auth"], color: "#f59e0b", delay: 0.9 },
-  { e: ["auth", "pg"], color: "#6366f1", delay: 1.5 },
-  { e: ["gw", "payments"], color: "#f59e0b", delay: 0.4 },
+// full round trip: request (photo → gateway → service → data) then response back.
+const REQ = "#6366f1"; // indigo: request leg
+const RES = "#10b981"; // emerald: response leg
+const SEG = 0.55; // seconds per hop
+const TURN = 0.35; // pause at the data tier before responding
+const PERIOD = 4.6; // total cycle; every packet loops on this period so legs stay in sync
+
+const ROUTES: { nodes: string[]; offset: number }[] = [
+  { nodes: ["photo", "gw", "orders", "pg"], offset: 0 },
+  { nodes: ["photo", "gw", "auth", "pg"], offset: 0.5 },
+  { nodes: ["photo", "gw", "payments", "kafka"], offset: 1.0 },
 ];
+
+type Flow = { e: [string, string]; color: string; delay: number };
+
+const FLOWS: Flow[] = ROUTES.flatMap(({ nodes, offset }) => {
+  const hops = nodes.length - 1;
+  const fwdEnd = hops * SEG;
+  const out: Flow[] = [];
+  // request: forward through the route
+  for (let k = 0; k < hops; k++) {
+    out.push({ e: [nodes[k], nodes[k + 1]], color: REQ, delay: offset + k * SEG });
+  }
+  // response: same path in reverse, after the request lands + turnaround
+  for (let j = 0; j < hops; j++) {
+    out.push({
+      e: [nodes[hops - j], nodes[hops - j - 1]],
+      color: RES,
+      delay: offset + fwdEnd + TURN + j * SEG,
+    });
+  }
+  return out;
+});
 
 const TIERS = [
   { label: "DATOS", x: 74 },
@@ -81,7 +106,7 @@ export default function HeroMesh() {
             fill={color}
             initial={{ cx: a.x, cy: a.y, opacity: 0 }}
             animate={{ cx: [a.x, b.x], cy: [a.y, b.y], opacity: [0, 1, 1, 0] }}
-            transition={{ duration: 1.5, delay, repeat: Infinity, repeatDelay: 1.4, ease: "easeInOut" }}
+            transition={{ duration: SEG, delay, repeat: Infinity, repeatDelay: PERIOD - SEG, ease: "easeInOut" }}
             style={{ filter: `drop-shadow(0 0 4px ${color})` }}
           />
         );
