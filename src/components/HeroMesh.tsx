@@ -38,36 +38,37 @@ const EDGES: [string, string][] = [
 // full round trip: request (photo → gateway → service → data) then response back.
 const REQ = "#6366f1"; // indigo: request leg
 const RES = "#10b981"; // emerald: response leg
-const SEG = 0.55; // seconds per hop
-const TURN = 0.35; // pause at the data tier before responding
-const PERIOD = 4.6; // total cycle; every packet loops on this period so legs stay in sync
+const SEG = 0.95; // seconds per hop
+const TURN = 0.5; // pause at the data tier before the response heads back
 
-const ROUTES: { nodes: string[]; offset: number }[] = [
-  { nodes: ["photo", "gw", "orders", "pg"], offset: 0 },
-  { nodes: ["photo", "gw", "auth", "pg"], offset: 0.5 },
-  { nodes: ["photo", "gw", "payments", "kafka"], offset: 1.0 },
+// One request, modelled as a timeline of hops measured in SEG units:
+//   t0  client → gateway        (single request)
+//   t1  gateway → services      (fan-out, parallel)
+//   t2  services → data stores  (cache miss / query)
+//   …turnaround…
+//   then the same path in reverse converges back to a single response at the client.
+const SERVICE_DATA: [string, string][] = [
+  ["auth", "pg"],
+  ["orders", "pg"],
+  ["payments", "kafka"],
 ];
 
 type Flow = { e: [string, string]; color: string; delay: number };
 
-const FLOWS: Flow[] = ROUTES.flatMap(({ nodes, offset }) => {
-  const hops = nodes.length - 1;
-  const fwdEnd = hops * SEG;
-  const out: Flow[] = [];
-  // request: forward through the route
-  for (let k = 0; k < hops; k++) {
-    out.push({ e: [nodes[k], nodes[k + 1]], color: REQ, delay: offset + k * SEG });
-  }
-  // response: same path in reverse, after the request lands + turnaround
-  for (let j = 0; j < hops; j++) {
-    out.push({
-      e: [nodes[hops - j], nodes[hops - j - 1]],
-      color: RES,
-      delay: offset + fwdEnd + TURN + j * SEG,
-    });
-  }
-  return out;
-});
+const reqEnd = 3 * SEG; // request reaches the data tier after 3 hops
+const resBase = reqEnd + TURN; // response leg starts here
+const PERIOD = resBase + 3 * SEG + 1.1; // full cycle; all packets loop on this period
+
+const FLOWS: Flow[] = [
+  // ── request ──
+  { e: ["photo", "gw"], color: REQ, delay: 0 }, // one request in
+  ...SERVICE_DATA.map(([svc]) => ({ e: ["gw", svc] as [string, string], color: REQ, delay: SEG })), // fan-out
+  ...SERVICE_DATA.map(([svc, db]) => ({ e: [svc, db] as [string, string], color: REQ, delay: 2 * SEG })), // hit data
+  // ── response (reverse) ──
+  ...SERVICE_DATA.map(([svc, db]) => ({ e: [db, svc] as [string, string], color: RES, delay: resBase })),
+  ...SERVICE_DATA.map(([svc]) => ({ e: [svc, "gw"] as [string, string], color: RES, delay: resBase + SEG })), // fan-in
+  { e: ["gw", "photo"], color: RES, delay: resBase + 2 * SEG }, // one response out
+];
 
 const TIERS = [
   { label: "DATOS", x: 74 },
@@ -106,7 +107,7 @@ export default function HeroMesh() {
             fill={color}
             initial={{ cx: a.x, cy: a.y, opacity: 0 }}
             animate={{ cx: [a.x, b.x], cy: [a.y, b.y], opacity: [0, 1, 1, 0] }}
-            transition={{ duration: SEG, delay, repeat: Infinity, repeatDelay: PERIOD - SEG, ease: "easeInOut" }}
+            transition={{ duration: SEG, delay, repeat: Infinity, repeatDelay: PERIOD - SEG, ease: "linear" }}
             style={{ filter: `drop-shadow(0 0 4px ${color})` }}
           />
         );
