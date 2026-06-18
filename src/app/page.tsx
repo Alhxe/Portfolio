@@ -103,7 +103,7 @@ export default function SignaturePage() {
               <div className="lg:hidden flex justify-center py-2">
                 <div className="relative">
                   <div className="absolute -inset-3 rounded-full bg-gradient-to-br from-indigo-300/40 to-amber-200/30 blur-2xl" />
-                  <SmartImg src="/profile.jpg" alt={PROFILE.name} className="relative w-44 h-44 rounded-full object-cover ring-[6px] ring-white shadow-xl" fallback={<div className="relative w-44 h-44 rounded-full bg-zinc-100 grid place-items-center text-2xl text-zinc-400 ring-[6px] ring-white shadow-xl">AP</div>} />
+                  <SmartImg src="/profile.png" alt={PROFILE.name} className="relative w-44 h-44 rounded-full object-cover ring-[6px] ring-white shadow-xl" fallback={<div className="relative w-44 h-44 rounded-full bg-zinc-100 grid place-items-center text-2xl text-zinc-400 ring-[6px] ring-white shadow-xl">AP</div>} />
                 </div>
               </div>
             </motion.div>
