@@ -94,7 +94,7 @@ export const CERTS = [
 
 export const SOCIALS = [
   { label: "Email", value: "alexhh1999@gmail.com", href: "mailto:alexhh1999@gmail.com" },
-  { label: "LinkedIn", value: "alex-pérez-álvarez", href: "https://www.linkedin.com/in/alex-pérez-álvarez" },
+  { label: "LinkedIn", value: "alex-perez-alvarez", href: "https://www.linkedin.com/in/alex-perez-alvarez0" },
   { label: "GitHub", value: "@Alhxe", href: "https://github.com/Alhxe" },
   { label: "MiArbitro", value: "miarbitro.es", href: "https://miarbitro.es" },
 ];
