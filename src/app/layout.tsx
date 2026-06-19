@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { MIARBITRO } from "@/data/cv";
+import { MIARBITRO, SITE_UPDATED } from "@/data/cv";
 
 const SITE_URL = "https://alexperezalvarez.dev";
 
@@ -32,6 +32,7 @@ const jsonLd = {
         addressLocality: "Sevilla",
         addressCountry: "ES",
       },
+      worksFor: { "@type": "Organization", name: "Bluumi Mobile Apps" },
       sameAs: [
         "https://github.com/Alhxe",
         "https://www.linkedin.com/in/alex-perez-alvarez0",
@@ -45,6 +46,17 @@ const jsonLd = {
       name: "Alex Pérez Álvarez — Backend Engineer",
       inLanguage: "es",
       publisher: { "@id": `${SITE_URL}/#person` },
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": `${SITE_URL}/#profilepage`,
+      url: `${SITE_URL}/`,
+      name: "Alex Pérez Álvarez — Backend Engineer",
+      inLanguage: "es",
+      isPartOf: { "@id": `${SITE_URL}/#website` },
+      mainEntity: { "@id": `${SITE_URL}/#person` },
+      datePublished: "2026-02-01",
+      dateModified: SITE_UPDATED,
     },
     {
       "@type": "SoftwareApplication",

@@ -1,3 +1,5 @@
+export const SITE_UPDATED = "2026-06-19";
+
 export const PROFILE = {
   name: "Alex Pérez Álvarez",
   role: "Desarrollador Backend",

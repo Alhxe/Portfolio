@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import SmartImg from "@/components/SmartImg";
 import HeroMesh from "@/components/HeroMesh";
 import Logo from "@/components/Logo";
-import { PROFILE, STATS, EXPERIENCE, MIARBITRO, STACK_GROUPS, FRONTEND, SOCIALS, CERTS } from "@/data/cv";
+import { PROFILE, STATS, EXPERIENCE, MIARBITRO, STACK_GROUPS, FRONTEND, SOCIALS, CERTS, SITE_UPDATED } from "@/data/cv";
 
 const NAV = [
   { id: "experiencia", label: "Experiencia", n: "01" },
@@ -276,7 +276,16 @@ export default function SignaturePage() {
           </Up>
           <div className="flex items-center justify-between mt-10 mono text-xs text-zinc-400">
             <span>© 2026 {PROFILE.name}</span>
-            <span>Next.js · Cloudflare Pages</span>
+            <span>
+              Actualizado{" "}
+              <time dateTime={SITE_UPDATED}>
+                {new Date(SITE_UPDATED).toLocaleDateString("es-ES", {
+                  year: "numeric",
+                  month: "long",
+                })}
+              </time>{" "}
+              · Next.js · Cloudflare Pages
+            </span>
           </div>
         </section>
       </main>

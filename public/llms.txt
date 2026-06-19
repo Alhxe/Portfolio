@@ -1,0 +1,38 @@
+# Alex Pérez Álvarez — Backend Engineer
+
+> Desarrollador Backend especializado en Java, Spring Boot y arquitectura de microservicios, con 5+ años en entornos enterprise (banca, turismo, sector público). Sevilla, España · remoto.
+
+## Sobre mí
+
+- Nombre: Alex Pérez Álvarez
+- Rol: Backend Engineer (Java · Spring Boot · Microservicios)
+- Ubicación: Sevilla, España (remoto)
+- Experiencia: 5+ años · 4 empresas enterprise · 3 sectores (banca, turismo, público)
+- Enfoque: Arquitectura Hexagonal, Clean Architecture, DDD, Event-Driven (Kafka), API First.
+
+## Experiencia
+
+- [Bluumi Mobile Apps](https://alexperezalvarez.dev/) — Backend Engineer (jul. 2025 — actualidad). APIs REST para microservicios de reservas turísticas; API First, revisión cruzada en PRs. Java 17/21, Spring Boot, PostgreSQL, Kafka, Kubernetes, Azure DevOps.
+- NTT DATA — Desarrollador de Software (oct. 2024 — jul. 2025). Microservicios de mensajería multicanal (SMS/Push/Email) de misión crítica en banca; alta disponibilidad, SLA, batch masivos. Java 8, Spring Boot, Oracle.
+- Indra — Desarrollador de Software (ene. 2022 — oct. 2024). ~3 años de servicios backend Java/Spring en remoto. Oracle, SQL, Maven.
+- INGEFOR — Desarrollador de Software (feb. 2021 — ene. 2022). Microservicios Java/Spring y frontend Angular para administración pública. Oracle, MySQL.
+
+## Proyecto
+
+- [MiArbitro](https://miarbitro.es) — Producto real en producción para árbitros. Backend de microservicios (Spring Boot, OpenAPI, infra propia en VPS), app móvil (React Native), web y sincronización con smartwatch (Apple Watch / Wear OS, paridad iOS/Android). Sincronización offline con cola de reintentos. CI/CD multi-job (GitHub Actions, tests E2E con Maestro sobre runners self-hosted).
+
+## Stack
+
+- Lenguaje & Core: Java 8/11/17/21, Spring Boot, Spring Security, Spring MVC, JPA/Hibernate
+- Arquitectura: Microservicios, REST · API First, OpenAPI, Event-Driven · Kafka, API Gateway, BFF
+- Patrones: Arquitectura Hexagonal, Ports & Adapters, Clean Architecture, DDD, SOLID
+- Datos: PostgreSQL, Oracle DB, SQL, modelado relacional
+- Cloud & DevOps: Azure, AWS (EC2/S3), Docker, Kubernetes, Tekton, Jenkins, GitHub Actions, Maven
+- Frontend: TypeScript, React, React Native, Angular
+
+## Contacto
+
+- Email: alexhh1999@gmail.com
+- LinkedIn: https://www.linkedin.com/in/alex-perez-alvarez0
+- GitHub: https://github.com/Alhxe
+- Web: https://alexperezalvarez.dev
